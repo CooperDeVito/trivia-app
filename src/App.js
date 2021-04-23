@@ -51,8 +51,7 @@ function App() {
       }
     ))
   }
-  */
-  
+  */ 
   //make state variable or array of the questions 
   //an array that says if its the right answer
 
