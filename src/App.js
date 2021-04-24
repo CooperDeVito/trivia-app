@@ -8,14 +8,20 @@ import { ThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 
 const theme = createMuiTheme ({ 
   palette: { 
-    type: 'light',
-
+    type: 'dark',
+    background: { 
+        default: "81D4FA"
+    },
     primary: { 
-      main: "#43A047"
+      main: "#43A047" // a green
     },
 
     secondary: {
-      main: "#0288D1"
+      main: "#e53935" // a red (standard)
+    },
+
+    tertiary: { 
+        main: "#03A9F4" // a blue
     }
   }
 })
@@ -51,7 +57,8 @@ function App() {
       }
     ))
   }
-  */ 
+  */
+  
   //make state variable or array of the questions 
   //an array that says if its the right answer
 
@@ -63,21 +70,10 @@ function App() {
       
       <h2>Trivia App </h2>
       {questions.map((question) => (
-        <h1>{question.question}:
-        <h1> {'\n'} </h1>
-        {question.incorrect_answers.map((answer) => (
-          <Button
-          color = 'secondary'
-          size = 'medium'
-          variant = 'contained'
-          type = 'button'
-          className = 'btn toggle-btn'> 
-          {answer} 
-          </Button>
-        ))}
-          
-        
-        </h1>
+        <Question
+        question = {question}
+        >
+        </Question>
       ))}
 
       
